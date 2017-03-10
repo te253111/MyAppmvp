@@ -8,6 +8,7 @@ public class DataUser {
     private String id;
     private String name;
     private String age;
+    private String date;
 
     public String getId() {
         return id;
@@ -31,5 +32,13 @@ public class DataUser {
 
     public void setAge(String age) {
         this.age = age;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

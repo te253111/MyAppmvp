@@ -23,19 +23,8 @@ import butterknife.OnClick;
 
 public class DetailFragment extends Fragment implements DetailContract.View {
     private static final String ARG_PARAM1 = "param1";
-    @BindView(R.id.btn_detail)
-    Button btnDetail;
-    @BindView(R.id.txt_id)
-    TextView txtId;
-    @BindView(R.id.txt_name)
-    TextView txtName;
-    @BindView(R.id.txt_age)
-    TextView txtAge;
-    @BindView(R.id.btn_back)
-    Button btnBack;
 
     private String mParam1;
-
 
     private listeners listeners;
 
@@ -103,9 +92,7 @@ public class DetailFragment extends Fragment implements DetailContract.View {
 
     @Override
     public void Showresult(DataUser dataUser) {
-        txtId.setText("ID : "+dataUser.getId());
-        txtName.setText("NAME : "+dataUser.getName());
-        txtAge.setText("AGE : "+dataUser.getAge());
+
     }
 
     @Override
