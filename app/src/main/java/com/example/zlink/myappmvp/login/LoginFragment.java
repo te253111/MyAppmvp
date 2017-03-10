@@ -43,7 +43,7 @@ public class LoginFragment extends Fragment implements LoginContract.View {
     private  listeners listeners;
 
 
-    public static interface listeners{
+    public interface listeners{
         void GotoPageDetail();
 
     }

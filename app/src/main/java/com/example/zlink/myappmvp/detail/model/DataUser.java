@@ -1,14 +1,25 @@
 package com.example.zlink.myappmvp.detail.model;
 
+import org.parceler.Parcel;
+
 /**
  * Created by Zlink on 9/3/2560.
  */
-
+@Parcel
 public class DataUser {
     private String id;
     private String name;
     private String age;
     private String date;
+
+    public DataUser( /* Parcel Required empty bean constructor */ ){}
+
+    public DataUser(String id,String name,String age,String date){
+        this.id=id;
+        this.name=name;
+        this.age=age;
+        this.date=date;
+    }
 
     public String getId() {
         return id;

@@ -4,32 +4,50 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.zlink.myappmvp.R;
+import com.example.zlink.myappmvp.detail.adapter.DetailAdapter;
 import com.example.zlink.myappmvp.detail.di.DaggerDetailcomponent;
 import com.example.zlink.myappmvp.detail.model.DataUser;
 import com.example.zlink.myappmvp.di.DaggerAppComponent;
+import com.example.zlink.myappmvp.login.LoginFragment;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class DetailFragment extends Fragment implements DetailContract.View {
+public class DetailFragment extends Fragment implements DetailContract.View,DetailAdapter.Listener {
     private static final String ARG_PARAM1 = "param1";
+    @BindView(R.id.recycleview)
+    RecyclerView recycleview;
+
+
+   listeners listeners;
+
+
+    public interface listeners{
+        void GotoPageProfile(DataUser dataUser);
+    }
+
 
     private String mParam1;
+    private List<DataUser> users;
 
-    private listeners listeners;
-
-    public static interface listeners{
-        void GoBack();
+    @Override
+    public void onItemClicked(DataUser clickedItem) {
+        listeners.GotoPageProfile(clickedItem);
+        Log.d("itemclick",clickedItem.getId());
     }
 
 
@@ -74,6 +92,14 @@ public class DetailFragment extends Fragment implements DetailContract.View {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         presenter.setView(this);
+        presenter.getDataUser();
+        onInitInstances();
+    }
+
+    private void onInitInstances() {
+        DetailAdapter adapter = new DetailAdapter(users,this);
+        recycleview.setLayoutManager(new LinearLayoutManager(getContext()));
+        recycleview.setAdapter(adapter);
     }
 
     @Override
@@ -84,6 +110,8 @@ public class DetailFragment extends Fragment implements DetailContract.View {
         }
     }
 
+
+
     @Override
     public void onDetach() {
         super.onDetach();
@@ -91,26 +119,8 @@ public class DetailFragment extends Fragment implements DetailContract.View {
 
 
     @Override
-    public void Showresult(DataUser dataUser) {
-
-    }
-
-    @Override
-    public void GoBack() {
-        listeners.GoBack();
-    }
-
-
-    @OnClick({R.id.btn_detail,R.id.btn_back})
-    public void OnClick(View view){
-        switch (view.getId()){
-            case R.id.btn_detail :
-                presenter.OnDetailButtonclick();
-                break;
-            case R.id.btn_back :
-                presenter.GoBack();
-                break;
-        }
+    public void SetDataUser(List<DataUser> userList) {
+        users = userList;
     }
 
 

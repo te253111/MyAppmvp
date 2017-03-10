@@ -10,4 +10,5 @@
     <string name="txt_detail">Detail</string>
     <string name="btn_detail">Detail</string>
     <string name="btn_back">BACK</string>
+    <string name="btn_profile_back">Back</string>
 </resources>
