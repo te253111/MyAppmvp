@@ -1,9 +1,11 @@
 package com.example.zlink.myappmvp.detail;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -47,7 +49,22 @@ public class DetailFragment extends Fragment implements DetailContract.View,Deta
     @Override
     public void onItemClicked(DataUser clickedItem) {
         listeners.GotoPageProfile(clickedItem);
-        Log.d("itemclick",clickedItem.getId());
+    }
+
+    @Override
+    public void Showdialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage("Test")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                    }
+                })
+                .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                });
+         builder.show();
     }
 
 
@@ -97,7 +114,7 @@ public class DetailFragment extends Fragment implements DetailContract.View,Deta
     }
 
     private void onInitInstances() {
-        DetailAdapter adapter = new DetailAdapter(users,this);
+        DetailAdapter adapter = new DetailAdapter(users,this,getContext());
         recycleview.setLayoutManager(new LinearLayoutManager(getContext()));
         recycleview.setAdapter(adapter);
     }
