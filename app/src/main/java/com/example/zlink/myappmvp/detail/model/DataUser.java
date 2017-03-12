@@ -12,13 +12,20 @@ public class DataUser {
     private String age;
     private String date;
 
+    private String no;
+    private String state;
+    private String contry;
+
     public DataUser( /* Parcel Required empty bean constructor */ ){}
 
-    public DataUser(String id,String name,String age,String date){
+    public DataUser(String id,String name,String age,String date,String no,String state,String contry){
         this.id=id;
         this.name=name;
         this.age=age;
         this.date=date;
+        this.no = no;
+        this.state = state;
+        this.contry = contry;
     }
 
     public String getId() {
@@ -51,5 +58,29 @@ public class DataUser {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getNo() {
+        return no;
+    }
+
+    public void setNo(String no) {
+        this.no = no;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getContry() {
+        return contry;
+    }
+
+    public void setContry(String contry) {
+        this.contry = contry;
     }
 }

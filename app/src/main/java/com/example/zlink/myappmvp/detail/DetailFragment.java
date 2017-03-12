@@ -35,7 +35,7 @@ public class DetailFragment extends Fragment implements DetailContract.View,Deta
     RecyclerView recycleview;
 
 
-   listeners listeners;
+    listeners listeners;
 
 
     public interface listeners{

@@ -1,4 +1,4 @@
-package com.example.zlink.myappmvp.profile;
+package com.example.zlink.myappmvp.profile.tab2;
 
 import com.example.zlink.myappmvp.detail.model.DataUser;
 
@@ -8,18 +8,18 @@ import javax.inject.Inject;
  * Created by Zlink on 10/3/2560.
  */
 
-public class ProfilePresenter implements ProfileContract.Presenter {
+public class AddressPresenter implements AddressContract.Presenter {
 
 
-    private ProfileContract.View view;
+    private AddressContract.View view;
 
     @Inject
-    public ProfilePresenter(){
+    public AddressPresenter(){
 
     }
 
     @Override
-    public void setView(ProfileContract.View view) {
+    public void setView(AddressContract.View view) {
         this.view = view;
     }
 

@@ -1,10 +1,8 @@
-package com.example.zlink.myappmvp.profile.di;
+package com.example.zlink.myappmvp.profile.tab1.di;
 
 import com.example.zlink.myappmvp.di.ActivityScope;
 import com.example.zlink.myappmvp.di.AppComponent;
-import com.example.zlink.myappmvp.login.di.LoginModule;
-import com.example.zlink.myappmvp.profile.ProfileContract;
-import com.example.zlink.myappmvp.profile.ProfileFragment;
+import com.example.zlink.myappmvp.profile.tab1.ProfileFragment;
 
 import dagger.Component;
 

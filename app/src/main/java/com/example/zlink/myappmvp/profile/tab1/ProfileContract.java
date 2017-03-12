@@ -1,4 +1,4 @@
-package com.example.zlink.myappmvp.profile;
+package com.example.zlink.myappmvp.profile.tab1;
 
 import com.example.zlink.myappmvp.Base.BasePresenter;
 import com.example.zlink.myappmvp.detail.model.DataUser;

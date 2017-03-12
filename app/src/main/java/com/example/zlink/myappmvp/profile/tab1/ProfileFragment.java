@@ -1,4 +1,4 @@
-package com.example.zlink.myappmvp.profile;
+package com.example.zlink.myappmvp.profile.tab1;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.example.zlink.myappmvp.R;
 import com.example.zlink.myappmvp.detail.model.DataUser;
 import com.example.zlink.myappmvp.di.DaggerAppComponent;
-import com.example.zlink.myappmvp.profile.di.DaggerProfilecomponent;
+import com.example.zlink.myappmvp.profile.tab1.di.DaggerProfilecomponent;
 
 import org.parceler.Parcels;
 
@@ -103,10 +103,12 @@ public class ProfileFragment extends Fragment implements ProfileContract.View {
 
     @Override
     public void ShowDataUser(DataUser dataUser) {
-        txtProfileId.setText("Id : " + dataUser.getId());
-        txtProfileName.setText("Name : " + dataUser.getName());
-        txtProfileAge.setText("Age :" + dataUser.getAge());
-        txtProfileDate.setText("Date :" + dataUser.getDate());
+        if(dataUser!=null) {
+            txtProfileId.setText("Id : " + dataUser.getId());
+            txtProfileName.setText("Name : " + dataUser.getName());
+            txtProfileAge.setText("Age :" + dataUser.getAge());
+            txtProfileDate.setText("Date :" + dataUser.getDate());
+        }
     }
 
     @OnClick(R.id.btn_profile_back)

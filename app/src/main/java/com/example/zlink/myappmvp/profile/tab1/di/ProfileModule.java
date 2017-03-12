@@ -1,7 +1,7 @@
-package com.example.zlink.myappmvp.profile.di;
+package com.example.zlink.myappmvp.profile.tab1.di;
 
-import com.example.zlink.myappmvp.profile.ProfileContract;
-import com.example.zlink.myappmvp.profile.ProfilePresenter;
+import com.example.zlink.myappmvp.profile.tab1.ProfileContract;
+import com.example.zlink.myappmvp.profile.tab1.ProfilePresenter;
 
 import dagger.Module;
 import dagger.Provides;
