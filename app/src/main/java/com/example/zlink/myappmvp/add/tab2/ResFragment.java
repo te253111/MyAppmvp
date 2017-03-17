@@ -76,7 +76,7 @@ public class ResFragment extends Fragment implements ResContract.View {
 
     @Override
     public void showdata(Hobby hobby) {
-        if(hobby != null){
+        if(hobby != null && hobby.getCook()!=null){
             txtResCook.setText("cook : "+hobby.getCook());
             txtResSport.setText("sport : "+hobby.getSport());
             txtResGame.setText("game : "+hobby.getGame());

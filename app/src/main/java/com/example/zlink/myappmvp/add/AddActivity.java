@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.zlink.myappmvp.Base.TabModel;
 import com.example.zlink.myappmvp.R;
+import com.example.zlink.myappmvp.add.adapter.CustumFragmentPagerItemAdapter;
 import com.example.zlink.myappmvp.add.tab1.AddFragment;
 import com.example.zlink.myappmvp.add.tab2.ResFragment;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
@@ -38,7 +39,7 @@ public class AddActivity extends AppCompatActivity {
 
     private ArrayList<TabModel> tabModels;
     FragmentPagerItems pages;
-    FragmentPagerItemAdapter adapter;
+    CustumFragmentPagerItemAdapter adapter;
 
 
 
@@ -59,7 +60,7 @@ public class AddActivity extends AppCompatActivity {
         for (TabModel tabModel : tabModels) {
             pages.add(FragmentPagerItem.of(tabModel.getTitle(), tabModel.getFragment(), tabModel.getBundle()));
         }
-        adapter = new FragmentPagerItemAdapter(getSupportFragmentManager(), pages);
+        adapter = new CustumFragmentPagerItemAdapter(getSupportFragmentManager(), pages);
         viewpager.setAdapter(adapter);
         guestSmartTab.setViewPager(viewpager);
         guestSmartTab.setOnPageChangeListener(pageChangeListener);
@@ -90,7 +91,7 @@ public class AddActivity extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
             if(position==1){
-
+                adapter.notifyDataSetChanged();
             }
         }
 
