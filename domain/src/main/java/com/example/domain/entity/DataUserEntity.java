@@ -1,24 +1,22 @@
-package com.example.zlink.myappmvp.detail.model;
-
-import org.parceler.Parcel;
+package com.example.domain.entity;
 
 /**
- * Created by Zlink on 9/3/2560.
+ * Created by Zlink on 14/3/2560.
  */
-@Parcel
-public class DataUser {
-    String id;
-    String name;
-    String age;
-    String date;
 
-    String no;
-    String state;
-    String contry;
+public class DataUserEntity {
+    private String id;
+    private String name;
+    private String age;
+    private String date;
 
-    public DataUser( /* Parcel Required empty bean constructor */ ){}
+    private String no;
+    private String state;
+    private String contry;
 
-    public DataUser(String id,String name,String age,String date,String no,String state,String contry){
+    public DataUserEntity( /* Parcel Required empty bean constructor */ ){}
+
+    public DataUserEntity(String id, String name, String age, String date, String no, String state, String contry){
         this.id=id;
         this.name=name;
         this.age=age;

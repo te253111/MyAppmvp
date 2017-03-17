@@ -57,11 +57,11 @@ public class ProfileActivity extends AppCompatActivity implements ProfileFragmen
         //setupTabLayout2(dataUser);
     }
 
-    /*private void setupTabLayout2(DataUser dataUser) {
+    /*private void setupTabLayout2(DataUserEntity dataUser) {
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(), FragmentPagerItems.with(this)
-                .add("Profile", ProfileFragment.class, new Bundler().putParcelable("DataUser", Parcels.wrap(dataUser)).get())
-                .add("Address", AddressFragment.class, new Bundler().putParcelable("DataUser", Parcels.wrap(dataUser)).get())
+                .add("Profile", ProfileFragment.class, new Bundler().putParcelable("DataUserEntity", Parcels.wrap(dataUser)).get())
+                .add("Address", AddressFragment.class, new Bundler().putParcelable("DataUserEntity", Parcels.wrap(dataUser)).get())
                 .create());
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -89,10 +89,10 @@ public class ProfileActivity extends AppCompatActivity implements ProfileFragmen
         tabModels = new ArrayList<>();
 
         Bundle t1 = new Bundle();
-        t1.putParcelable("DataUser",Parcels.wrap(dataUser));
+        t1.putParcelable("DataUserEntity",Parcels.wrap(dataUser));
 
         Bundle t2 = new Bundle();
-        t2.putParcelable("DataUser",Parcels.wrap(dataUser));
+        t2.putParcelable("DataUserEntity",Parcels.wrap(dataUser));
 
         //Profile Tab
         TabModel Profile = new TabModel();

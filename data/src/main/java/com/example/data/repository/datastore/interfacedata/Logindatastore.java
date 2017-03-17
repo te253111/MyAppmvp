@@ -1,4 +1,4 @@
-package com.example.data.repository.datastore;
+package com.example.data.repository.datastore.interfacedata;
 
 import com.example.domain.LoginUsecase;
 

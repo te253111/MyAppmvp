@@ -72,7 +72,11 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return userList.size();
+        if(userList!=null) {
+            return userList.size();
+        }else{
+            return 0;
+        }
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {

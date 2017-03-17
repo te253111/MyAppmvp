@@ -1,18 +1,11 @@
 package com.example.domain;
 
 import com.example.domain.excutor.PostExecutionThread;
-import com.example.domain.resoitory.Logindomaindatastore;
-
-import java.util.concurrent.Callable;
+import com.example.domain.resoitory.Domainrepository;
 
 import javax.inject.Inject;
 
-import dagger.Provides;
 import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Observer;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by Zlink on 7/3/2560.
@@ -21,17 +14,17 @@ import io.reactivex.schedulers.Schedulers;
 public class LoginUsecase extends BaseUsecase<LoginUsecase.ResponsValue,LoginUsecase.RequestValue>{
 
 
-    private Logindomaindatastore logindomaindatastore;
+    private Domainrepository domainrepository;
 
     @Inject
-    public LoginUsecase(PostExecutionThread postExecutionThread,Logindomaindatastore logindomaindatastore){
+    public LoginUsecase(PostExecutionThread postExecutionThread,Domainrepository domainrepository){
         super(postExecutionThread);
-        this.logindomaindatastore = logindomaindatastore;
+        this.domainrepository = domainrepository;
     }
 
     @Override
     protected Observable<ResponsValue> Buildobservable(RequestValue requestValue) {
-        return logindomaindatastore.chklogin(requestValue);
+        return domainrepository.chklogin(requestValue);
     }
 
 
@@ -76,6 +69,9 @@ public class LoginUsecase extends BaseUsecase<LoginUsecase.ResponsValue,LoginUse
     }
 
     public static class ResponsValue{
+
+        String txtmessage;
+
         public String getTxtmessage() {
             return txtmessage;
         }
@@ -83,8 +79,6 @@ public class LoginUsecase extends BaseUsecase<LoginUsecase.ResponsValue,LoginUse
         public void setTxtmessage(String txtmessage) {
             this.txtmessage = txtmessage;
         }
-
-        String txtmessage;
     }
 
 }

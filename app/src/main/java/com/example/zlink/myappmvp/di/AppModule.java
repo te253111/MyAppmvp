@@ -1,8 +1,8 @@
 package com.example.zlink.myappmvp.di;
 
-import com.example.data.LoginReposiritory;
+import com.example.data.Reposiritory;
 import com.example.domain.excutor.PostExecutionThread;
-import com.example.domain.resoitory.Logindomaindatastore;
+import com.example.domain.resoitory.Domainrepository;
 import com.example.zlink.myappmvp.UIThread;
 
 import javax.inject.Singleton;
@@ -23,7 +23,8 @@ public class AppModule {
 
     @Singleton
     @Provides
-    public Logindomaindatastore logindomaindatastore(LoginReposiritory loginReposiritory){
-        return loginReposiritory;
+    public Domainrepository logindomaindatastore(Reposiritory Reposiritory){
+        return Reposiritory;
     }
+
 }

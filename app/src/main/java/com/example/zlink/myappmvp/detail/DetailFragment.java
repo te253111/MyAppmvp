@@ -114,9 +114,7 @@ public class DetailFragment extends Fragment implements DetailContract.View,Deta
     }
 
     private void onInitInstances() {
-        DetailAdapter adapter = new DetailAdapter(users,this,getContext());
-        recycleview.setLayoutManager(new LinearLayoutManager(getContext()));
-        recycleview.setAdapter(adapter);
+
     }
 
     @Override
@@ -138,6 +136,9 @@ public class DetailFragment extends Fragment implements DetailContract.View,Deta
     @Override
     public void SetDataUser(List<DataUser> userList) {
         users = userList;
+        DetailAdapter adapter = new DetailAdapter(users,this,getContext());
+        recycleview.setLayoutManager(new LinearLayoutManager(getContext()));
+        recycleview.setAdapter(adapter);
     }
 
 

@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AddressFragment extends Fragment implements AddressContract.View {
-    private static final String ARG_PARAM1 = "DataUser";
+    private static final String ARG_PARAM1 = "DataUserEntity";
     @BindView(R.id.txt_address_no)
     TextView txtAddressNo;
     @BindView(R.id.txt_address_state)

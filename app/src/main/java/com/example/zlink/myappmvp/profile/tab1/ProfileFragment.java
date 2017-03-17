@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ProfileFragment extends Fragment implements ProfileContract.View {
-    private static final String ARG_PARAM1 = "DataUser";
+    private static final String ARG_PARAM1 = "DataUserEntity";
     @BindView(R.id.txt_profile_id)
     TextView txtProfileId;
     @BindView(R.id.txt_profile_name)
